@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #1e1e2f, #185070);
+}
+
+.center {
+    width: 350px;
+
+    background: #fff;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.center h1 {
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    color: #333;
+}
+
+.txt_field {
+    position: relative;
+
+    margin-bottom: 25px;
+}
+
+.txt_field input {
+    width: 100%;
+
+    padding: 12px 0;
+
+    border: none;
+
+    border-bottom: 2px solid #aaa;
+
+    outline: none;
+
+    background: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.txt_field label {
+    position: absolute;
+
+    top: 12px;
+    left: 0;
+
+    color: #777;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.txt_field input:focus,
+.txt_field input:valid {
+    border-bottom: 2px solid #002b44;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -10px;
+
+    font-size: 13px;
+
+    color: #294f78;
+}
+
+.pass {
+    color: #666;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    margin-bottom: 20px;
+}
+
+.pass:hover {
+    color: #294f78;
+}
+
+#loginBtn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #294f78;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#loginBtn:hover {
+    background: #1f3d5e;
+
+    transform: scale(1.03);
+}
+
+#loginBtn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.signup_link {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.signup_link a {
+    text-decoration: none;
+
+    color: #294f78;
+
+    font-size: 14px;
+}
+
+.signup_link a:hover {
+    text-decoration: underline;
+}
+
+#mensagem {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    min-height: 20px;
+}

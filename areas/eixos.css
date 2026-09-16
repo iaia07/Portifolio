@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background-image:url("../img/upscalemedia-transformed.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    text-align:center;
+}
+
+h1{
+    color:#ff69b4;
+    font-size:3rem;
+    margin-bottom:50px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.8),
+    0 0 20px rgba(255,105,180,.5);
+}
+
+.eixo{
+    margin-bottom:60px;
+}
+
+.eixo h2{
+    color:white;
+    margin-bottom:25px;
+    font-size:2rem;
+}
+
+.cards{
+    display: flex;
+    justify-content: center; /* centraliza */
+    align-items: center;
+    gap: 20px; /* espaço entre imagens */
+    flex-wrap: wrap; /* quebra linha se não couber */
+}
+
+.card{
+        width: 200px;
+    height: auto;
+    border-radius: 10px;
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:30px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card p{
+    color:white;
+    padding:12px;
+    text-align:center;
+    font-size:0.95rem;
+    font-weight:600;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.3),
+    0 0 20px rgba(255,182,193,.5);
+}

@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background-image:url("../img/upscalemedia-transformed.jpeg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+}
+
+.perfil{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.perfil img{
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.8),
+    0 0 40px rgba(255,105,180,.5);
+}
+
+.perfil h1{
+    margin-top:20px;
+    font-size:4rem;
+    color:black;
+}
+
+.perfil h2{
+    color:#ff4fa1;
+    letter-spacing:6px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:320px;
+    min-height:260px;
+
+    background:rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:30px;
+
+    padding:25px;
+
+    color:#222;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#ff4fa1;
+    margin-bottom:20px;
+    font-size:1.6rem;
+}
+
+.card p,
+.card li{
+    line-height:1.8;
+    font-size:1rem;
+}
+
+.card ul{
+    list-style:none;
+}
