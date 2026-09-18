@@ -41,9 +41,9 @@ async function entrar(event) {
             // Salva os dados do usuário
             localStorage.setItem("usuario", JSON.stringify(dados.user));
 
-            // Redireciona para a página index.html
+            // Redireciona para a página home.html
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "home.html";
             }, 1000);
 
         } else {

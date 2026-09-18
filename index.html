@@ -1,87 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-    <div id="particles"></div>
+    <div class="center">
 
-    <nav>
-        <h2 class="logo">IARA K.</h2>
+        <h1>LOGIN</h1>
 
-        <ul>
-            <li><a href="./areas/sobre.html">Sobre</a></li>
-            <li><a href="./areas/project.html">Projetos</a></li>
-            <li><a href="./areas/contact.html">Contato</a></li>
-            <li><a href="./areas/áronhec.html">Conhecimentos</a></li>
-        </ul>
-    </nav>
+        <form id="loginForm" onsubmit="entrar(event)">
 
-    <main>
-
-        <div class="perfil">
-
-            <img src="./img/WhatsApp Image 2026-06-16 at 12.51.34.jpeg" alt="Iara">
-
-            <h1>IARA</h1>
-            <h2>KETHELYN</h2>
-
-        </div>
-
-        <section class="card">
-
-            <div class="info">
-                <h3>🌷 Quem sou?</h3>
-
-                <p>
-                    Sou Iara Kethelyn, estudante do SESI-SENAI de Picos,
-                    apaixonada por tecnologia, design e programação.
-                </p>
+            <div class="txt_field">
+                <input
+                    type="email"
+                    id="usuario"
+                    required
+                    autocomplete="email"
+                >
+                <label for="usuario">E-mail:</label>
             </div>
 
-            <div class="info">
-                <h3>💭 Sonhos</h3>
-
-                <p>
-                    Cursar Psicologia, construir uma vida feliz
-                    e continuar aprendendo coisas novas.
-                </p>
+            <div class="txt_field">
+                <input
+                    type="password"
+                    id="senha"
+                    required
+                    autocomplete="current-password"
+                >
+                <label for="senha">Senha:</label>
             </div>
 
-            <div class="info">
-                <h3>🎯 Metas</h3>
-
-                <p>
-                    Evoluir na programação e conquistar meus objetivos.
-                </p>
+            <div class="pass">
+                Esqueceu sua senha?
             </div>
 
-        </section>
+            <input
+                type="submit"
+                value="Login"
+                id="loginBtn"
+            >
 
-<img src="img/mascote.png" alt="Mascote" class="mascote">
+            <div class="signup_link">
+                <a href="#">Não tem conta? Cadastre-se!</a>
+            </div>
 
-    </main>
+        </form>
 
-    <footer>
+        <p id="mensagem"></p>
 
-        <a href="https://www.instagram.com/">
-            <img src="./img/instagram.png">
-        </a>
+    </div>
 
-        <a href="https://open.spotify.com/intl-pt">
-            <img src="./img/spotfy.png">
-        </a>
-
-        <a href="https://www.tiktok.com/">
-            <img src="./img/tiktok.png">
-        </a>
-
-    </footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
+</html>
