@@ -1,66 +1,69 @@
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+// URL do seu projeto Supabase
+const supabaseUrl = "https://hjuscxfnsigrjbemmgqs.supabase.co";
+
+// Publishable Key do Supabase
+const supabaseKey = "sb_publishable_ISScGeHISLRCRqqOlVI3rA_mBKko7CU";
+
+// Cria a conexão com o Supabase
+const supabase = createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
+
+// FUNÇÃO DE LOGIN
 async function entrar(event) {
+
     event.preventDefault();
 
-    // Pega os valores digitados
     const email = document.getElementById("usuario").value.trim();
     const senha = document.getElementById("senha").value;
     const botao = document.getElementById("loginBtn");
-
-    // Verifica se os campos estão preenchidos
-    if (email === "" || senha === "") {
-        alert("Preencha o e-mail e a senha!");
-        return;
-    }
+    const mensagem = document.getElementById("mensagem");
 
     // Muda o botão enquanto faz o login
     botao.value = "Entrando...";
     botao.disabled = true;
 
+    mensagem.textContent = "";
+
     try {
-        const resposta = await fetch("http://localhost:3000/api/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: email,
-                senha: senha
-            })
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: senha
         });
 
-        const dados = await resposta.json();
+        if (error) {
+            console.error(error);
 
-        // Mostra no console o que o servidor respondeu
-        console.log("Resposta do servidor:", dados);
-
-        if (resposta.ok && dados.success) {
-
-            botao.value = "Sucesso!";
-            botao.style.background = "green";
-
-            // Salva os dados do usuário
-            localStorage.setItem("usuario", JSON.stringify(dados.user));
-
-            // Redireciona para a página home.html
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 1000);
-
-        } else {
-
+            mensagem.textContent = "E-mail ou senha incorretos.";
             botao.value = "Login";
             botao.disabled = false;
 
-            alert(dados.message || "E-mail ou senha inválidos!");
+            return;
         }
+
+        console.log("Usuário logado:", data.user);
+
+        mensagem.textContent = "Login realizado com sucesso!";
+
+        // Depois do login, vai para o site
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1000);
 
     } catch (erro) {
 
-        console.error("Erro no login:", erro);
+        console.error(erro);
+
+        mensagem.textContent = "Ocorreu um erro ao realizar o login.";
 
         botao.value = "Login";
         botao.disabled = false;
-
-        alert("Não foi possível conectar ao servidor. Verifique se o Node.js está rodando.");
     }
 }
+
+window.entrar = entrar;
