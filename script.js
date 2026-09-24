@@ -52,7 +52,7 @@ async function entrar(event) {
 
         // Depois do login, vai para o site
         setTimeout(() => {
-            window.location.href = "../home.html";
+            window.location.href = "home.html";
         }, 1000);
 
     } catch (erro) {
